@@ -1,29 +1,3 @@
-// import React from "react";
-// import Link  from "next/link"
-//
-//
-// export default function Header() {
-//     return (
-//         <header className="flex items-center justify-between p-8">
-//             <h1 className="text-4xl font-bold p-8">My Page</h1>
-//             <nav>
-//                 <ul className="flex space-x-8">
-//                 <li>
-//                     <a href="#home">Home</a>
-//                 </li>
-//                 <li>
-//                     <a href="#projects">Projects</a>
-//                 </li>
-//                 <li>
-//                     <a href="#about">About</a>
-//                 </li>
-//                 </ul>
-//             </nav>
-//         </header>
-//     );
-// }
-
-
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { FiMenu, FiArrowRight, FiX, FiChevronDown } from "react-icons/fi";
 import { FaUserCircle } from "react-icons/fa";
@@ -39,17 +13,17 @@ const Example = () => {
     return (
         <>
             <FlyoutNav />
-            <div
-                className="relative min-h-screen"
-                style={{
-                    backgroundImage: "url(/imgs/random/12.jpg)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            >
-                <div className="absolute inset-0 z-0 bg-gradient-to-b from-neutral-950/90 to-neutral-950/0" />
-            </div>
-            <div className="h-screen bg-neutral-50" />
+            {/*<div*/}
+            {/*    className="relative min-h-screen"*/}
+            {/*    // style={{*/}
+            {/*    //     // backgroundImage: "url(/imgs/random/12.jpg)",*/}
+            {/*    //     backgroundSize: "cover",*/}
+            {/*    //     backgroundPosition: "center",*/}
+            {/*    // }}*/}
+            {/*>*/}
+            {/*    <div className="absolute inset-0 z-0 bg-gradient-to-b from-neutral-950/90 to-neutral-950/0" />*/}
+            {/*</div>*/}
+            {/*<div className="h-screen bg-neutral-50" />*/}
         </>
     );
 };

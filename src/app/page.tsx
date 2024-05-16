@@ -3,16 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import HeroSection from "@/components/HeroSection";
-import Header from "@/components/Header";
+import HeroSection from "@/components/DarkGridHero";
+import Header from "@/components/Header/Header";
 import ProjectSection from "@/components/ProjectSection";
+import Project from "@/components/Project";
+import {DarkGridHero} from "@/components/HeroSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex flex-col items-center justify-between">
         <Header />
-        <HeroSection />
-        <ProjectSection />
+        <DarkGridHero />
+        {/*<ProjectSection />*/}
+        <Project />
     </main>
   );
 }
