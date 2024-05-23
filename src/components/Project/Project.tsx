@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import Card from "@/components/Card";
+import Card from "@/components/Project/Card";
 
 export default function Project() {
     const [offset, setOffset] = useState(0);

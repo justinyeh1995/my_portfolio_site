@@ -15,6 +15,26 @@ export const DarkGridHero = () => {
 
 const Content = () => {
   const [count, setCount] = useState(0);
+  useEffect( () => {
+      const incrementCount = async () => {
+          const response = await fetch("https://0lyaj9td4m.execute-api.us-east-2.amazonaws.com/default/visitorCount", {
+              method: 'POST',
+              headers: {
+              'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                  websiteId: 'justinyeh1995.com',
+                  action: 'increment'
+              })
+          })
+      const data = await response.json();
+      console.log(data);
+      const count: number = parseInt(data.count, 10);
+      setCount(count);
+      }
+      incrementCount();
+  }, []);
+
   return (
       <div className="relative z-20 mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-24 md:px-8 md:py-36">
         <motion.div
@@ -284,20 +304,3 @@ const GradientGrid = () => {
 
 const GRID_BOX_SIZE = 32;
 const BEAM_WIDTH_OFFSET = 1;
-
-type WindowSize = {
-  width: number | undefined;
-  height: number | undefined;
-};
-
-type BeamType = {
-  top: number;
-  left: number;
-  transition?: AnimationProps["transition"];
-};
-
-type ButtonProps = {
-  children: ReactNode;
-  className?: string;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
-
