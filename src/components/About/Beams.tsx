@@ -75,7 +75,7 @@ export default Beams = () => {
     return (
         <>
             {placements.map((p, i) => (
-                <Beam
+                <Beams
                     key={i}
                     top={p.top}
                     left={p.left - BEAM_WIDTH_OFFSET}
@@ -108,7 +108,7 @@ const useWindowSize = () => {
     return windowSize;
 };
 
-const Beam = ({ top, left, transition = {} }: BeamType) => {
+const Beams = ({ top, left, transition = {} }: BeamType) => {
     return (
         <motion.div
             initial={{
