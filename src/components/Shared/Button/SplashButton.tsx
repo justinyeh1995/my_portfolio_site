@@ -1,12 +1,12 @@
 import {twMerge} from "tailwind-merge";
 import React, { ReactNode } from 'react';
 
-type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
-    children: ReactNode;
-    className?: string;
-};
+// type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
+//     children: ReactNode;
+//     className?: string;
+// };
 
-export default SplashButton = ({ children, className, ...rest }: ButtonProps) => {
+export const SplashButton = ({ children, className, ...rest }: ButtonProps) => {
     return (
         <button
             className={twMerge(

@@ -1,12 +1,13 @@
 import {twMerge} from "tailwind-merge";
 import React, { ReactNode } from 'react';
 
-type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
-    children: ReactNode;
-    className?: string;
-};
 
-export default GhostButton = ({ children, className, ...rest }: ButtonProps) => {
+// type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
+//     children: ReactNode;
+//     className?: string;
+// };
+
+export const GhostButton = ({ children, className, ...rest }: ButtonProps) => {
     return (
         <button
             className={twMerge(
