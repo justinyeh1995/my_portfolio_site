@@ -1,11 +1,6 @@
 import React, {useEffect, useState, ReactNode} from "react";
-import { AnimationProps, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
-type BeamType = {
-    top: number;
-    left: number;
-    transition?: AnimationProps;
-};
 
 type WindowSize = {
     width: number | undefined;
@@ -75,7 +70,7 @@ export const Beams = () => {
     return (
         <>
             {placements.map((p, i) => (
-                <Beams
+                <Beam
                     key={i}
                     top={p.top}
                     left={p.left - BEAM_WIDTH_OFFSET}
@@ -108,7 +103,11 @@ const useWindowSize = () => {
     return windowSize;
 };
 
-const Beams = ({ top, left, transition = {} }: BeamType) => {
+const Beam = ({ top, left, transition = {} }: {
+    top: number;
+    left: number;
+    transition?: Record<string, any>;
+}) => {
     return (
         <motion.div
             initial={{

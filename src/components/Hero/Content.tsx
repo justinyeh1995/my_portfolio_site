@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
 import { useQuery } from 'react-query';
 import {motion} from "framer-motion";
-import {GhostButton, SplashButton} from "@/components/Shared/Button";
-import {FiArrowRight} from "react-icons/fi";
+import {FaGithub, FaLinkedin, FaMailBulk} from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+
 
 const GlowingChip = ({ children, count }: { children: string, count: number}) => {
     return (
@@ -10,6 +11,28 @@ const GlowingChip = ({ children, count }: { children: string, count: number}) =>
       {children} {count.toLocaleString('en-US')}
             <span className="absolute bottom-0 left-3 right-3 h-[1px] bg-gradient-to-r from-zinc-500/0 via-zinc-300 to-zinc-500/0" />
     </span>
+    );
+};
+
+const SocialMedias = () => {
+    return (
+        <ul className="flex p-1 px-2 gap-3">
+            <li className="flex items-center">
+                <a href="https://www.linkedin.com/in/chihtingyeh1995/" target="_blank" className="text-zinc-50 hover:text-zinc-200">
+                    <FaLinkedin className="text-2xl text-zinc-50" />
+                </a>
+            </li>
+            <li className="flex items-center">
+                <a href="https://www.github.com/justinyeh1995" target="_blank" className="text-zinc-50 hover:text-zinc-200">
+                    <FaGithub className="text-2xl text-zinc-50" />
+                </a>
+            </li>
+            <li className="flex items-center">
+                <a href="mailto:justinyeh1995.com" target="_blank" className="text-zinc-50 hover:text-zinc-200">
+                    <SiGmail className="text-2xl text-zinc-50" />
+                </a>
+            </li>
+        </ul>
     );
 };
 
@@ -35,15 +58,6 @@ const fetchVisitorCount = async () => {
 }
 
 export const Content = () => {
-    // const { data, isLoading, isError } = useQuery('visitorCount', fetchVisitorCount);
-    // const count = data?.count || 0;
-    // if (isLoading) {
-    //     return <motion.div>Loading...</motion.div>;
-    // }
-    //
-    // if (isError) {
-    //     return <motion.div>Error: Failed to fetch users</motion.div>;
-    // }
     const [count, setCount] = useState(0);
     useEffect( () => {
         const getCount = async () => {
@@ -55,7 +69,7 @@ export const Content = () => {
     }, []);
 
     return (
-        <div className="relative z-20 mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-24 md:px-8 md:py-36">
+        <div className="relative z-20 mx-auto flex flex-col items-center justify-center px-4 py-24 md:px-8 md:py-36">
             <motion.div
                 initial={{
                     y: 25,
@@ -83,7 +97,7 @@ export const Content = () => {
                     opacity: 1,
                 }}
                 transition={{
-                    duration: 1.25,
+                    duration: 0.75,
                     delay: 0.25,
                     ease: "easeInOut",
                 }}
@@ -91,7 +105,7 @@ export const Content = () => {
             >
                 Chih-Ting Yeh 🚀
             </motion.h1>
-            <motion.p
+            <motion.div
                 initial={{
                     y: 25,
                     opacity: 0,
@@ -102,41 +116,14 @@ export const Content = () => {
                 }}
                 transition={{
                     duration: 1.25,
-                    delay: 0.5,
+                    delay: 0.25,
                     ease: "easeInOut",
                 }}
-                className="mb-9 max-w-2xl text-center text-base leading-relaxed text-zinc-400 sm:text-lg md:text-lg md:leading-relaxed"
+                className="flex flex-col items-center gap-6 sm:flex-row"
             >
-                Hello, I'm Justin Yeh (Mandarin Name: 葉致廷 Yè Zhìtíng), a Master’s student in Computer Science at Vanderbilt University
-                with a fervent interest in leveraging technology to solve complex problems, particularly within the realms of cybersecurity
-                and data-driven applications.<br />
-                Check out some projects that I've done.<br />
-                Cheers! 🍻
-            </motion.p>
-            {/*<motion.div*/}
-            {/*    initial={{*/}
-            {/*        y: 25,*/}
-            {/*        opacity: 0,*/}
-            {/*    }}*/}
-            {/*    animate={{*/}
-            {/*        y: 0,*/}
-            {/*        opacity: 1,*/}
-            {/*    }}*/}
-            {/*    transition={{*/}
-            {/*        duration: 1.25,*/}
-            {/*        delay: 0.75,*/}
-            {/*        ease: "easeInOut",*/}
-            {/*    }}*/}
-            {/*    className="flex flex-col items-center gap-6 sm:flex-row"*/}
-            {/*>*/}
-            {/*    <SplashButton className="flex items-center gap-2">*/}
-            {/*        Try it free*/}
-            {/*        <FiArrowRight />*/}
-            {/*    </SplashButton>*/}
-            {/*    <GhostButton className="rounded-md px-4 py-2 text-zinc-100">*/}
-            {/*        Learn more*/}
-            {/*    </GhostButton>*/}
-            {/*</motion.div>*/}
+                <SocialMedias />
+            </motion.div>
+
         </div>
     );
 };
