@@ -1,12 +1,12 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Content, Beams } from "@/components/About/Content";
+import { Content, Beams } from "@/components/Hero/Content";
 
-export const DarkGridHero = () => {
+export const Hero = () => {
   return (
       <section className="relative overflow-hidden bg-zinc-950">
         <Content />
-        <Beams />
+        {/*<Beams />*/}
         <GradientGrid />
       </section>
   );

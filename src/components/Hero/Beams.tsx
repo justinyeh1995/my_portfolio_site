@@ -15,7 +15,7 @@ type WindowSize = {
 const GRID_BOX_SIZE = 32;
 const BEAM_WIDTH_OFFSET = 1;
 
-export default Beams = () => {
+export const Beams = () => {
     const { width } = useWindowSize();
 
     const numColumns = width ? Math.floor(width / GRID_BOX_SIZE) : 0;
