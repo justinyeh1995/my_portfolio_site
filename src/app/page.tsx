@@ -5,14 +5,18 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Header from "@/components/Header/Header";
 import Project from "@/components/Project/Project";
-import {DarkGridHero} from "@/components/About/HeroSection";
+import {Hero} from "@/components/Hero/Hero";
+import {AboutMe} from "@/components/About/About";
+import {Footer} from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between">
         <Header />
-        <DarkGridHero />
+        <Hero />
+        <AboutMe />
         <Project />
+        <Footer />
     </main>
   );
 }
