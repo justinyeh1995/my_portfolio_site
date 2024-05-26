@@ -69,7 +69,7 @@ export const Content = () => {
     }, []);
 
     return (
-        <div className="relative z-20 mx-auto flex flex-col items-center justify-center px-4 py-24 md:px-8 md:py-36">
+        <div className="relative z-20 mx-auto flex flex-col items-center justify-center px-4 py-12 md:px-8 md:py-36">
             <motion.div
                 initial={{
                     y: 25,
@@ -97,8 +97,8 @@ export const Content = () => {
                     opacity: 1,
                 }}
                 transition={{
-                    duration: 0.75,
-                    delay: 0.25,
+                    duration: 0.25,
+                    delay: 0.1,
                     ease: "easeInOut",
                 }}
                 className="mb-3 text-center text-3xl font-bold leading-tight text-zinc-50 sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight lg:text-7xl lg:leading-tight"
