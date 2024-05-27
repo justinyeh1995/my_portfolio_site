@@ -2,7 +2,6 @@ import Carousel from "@/components/Project/Carousel";
 import useMeasure from "react-use-measure";
 import {motion} from "framer-motion";
 import React from "react";
-
 export default function Project() {
     const [ref, { width }] = useMeasure();
     return (

@@ -2,6 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+function imageLoader({ src }: { src: string }) {
+    return `/images/${src}`; // REPLACE WITH YOUR IMAGE DIRECTORY
+}
+
 const AboutMe = () => {
     return (
         <section id="AboutMe" className="relative overflow-hidden bg-zinc-950 py-8 px-4 md:px-16 lg:px-24 min-h-screen flex flex-col justify-center">
@@ -36,6 +40,7 @@ const AboutMe = () => {
                                 width={300}
                                 height={300}
                                 className="rounded-lg"
+                                loader={imageLoader}
                             />
                         </motion.div>
                     </div>
