@@ -1,5 +1,7 @@
 import Carousel from "@/components/Project/Carousel";
 import useMeasure from "react-use-measure";
+import {motion} from "framer-motion";
+import React from "react";
 
 export default function Project() {
     const [ref, { width }] = useMeasure();
@@ -8,9 +10,14 @@ export default function Project() {
             <div className=" overflow-hidden p-4">
                 {/* CARDS */}
                 <div className="mx-auto max-w-6xl">
-                    <h1 className="mb-4 text-2xl font-semibold">
-                        Recent <span className="text-slate-500">Projects.</span>
-                    </h1>
+                    <motion.h1
+                        initial={{ y: 25, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 1.25, ease: "easeInOut" }}
+                        className="text-4xl font-bold text-gray-100 mb-6"
+                    >
+                        Recent Projects
+                    </motion.h1>
                     <Carousel items={projects} />
                 </div>
             </div>
