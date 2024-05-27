@@ -39,7 +39,7 @@ const FlyoutNav = () => {
                 <Logo />
                 <div className="hidden gap-6 lg:flex">
                     <Links />
-                    <CTAs />
+                    {/*<CTAs />*/}
                 </div>
                 <MobileMenu />
             </div>
