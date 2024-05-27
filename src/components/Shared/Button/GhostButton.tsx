@@ -2,12 +2,12 @@ import {twMerge} from "tailwind-merge";
 import React, { ReactNode } from 'react';
 
 
-// type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
-//     children: ReactNode;
-//     className?: string;
-// };
+type ButtonProps = {
+    children: ReactNode;
+    className?: string;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const GhostButton = ({ children, className, ...rest }: ButtonProps) => {
+const GhostButton = ({ children, className, ...rest }: ButtonProps) => {
     return (
         <button
             className={twMerge(
@@ -20,3 +20,5 @@ export const GhostButton = ({ children, className, ...rest }: ButtonProps) => {
         </button>
     );
 };
+
+export default GhostButton;

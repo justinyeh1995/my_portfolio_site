@@ -52,7 +52,7 @@ const Logo = ({ color = "white" }: { color?: string }) => {
     return (
         <div className="flex items-center gap-2">
       <span className="text-2xl font-bold" style={{ color }}>
-        Yeh's 🍀
+        Yeh 🍀
       </span>
             {/*<svg*/}
             {/*    width="50"*/}
@@ -156,7 +156,7 @@ const AboutUsContent = () => {
                 <div>
                     <h2 className="mb-2 text-xl font-semibold text-white">About us</h2>
                     <p className="mb-6 max-w-xs text-sm text-neutral-400">
-                        Placeholder is the world's leading placeholder company.
+                        Placeholder is the world leading placeholder company.
                     </p>
                 </div>
                 <a
@@ -434,17 +434,17 @@ const LINKS = [
     {
         text: "About Me",
         href: "#AboutMe",
-        // component: AboutUsContent,
+        component: AboutUsContent,
     },
     {
         text: "Projects",
         href: "#Projects",
-        // component: PricingContent,
+        component: PricingContent,
     },
     {
         text: "Resume",
         href: "#",
-        // component: CareersContent,
+        component: CareersContent,
     },
     {
         text: "Updates",

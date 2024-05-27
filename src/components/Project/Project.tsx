@@ -1,29 +1,17 @@
-import { motion } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import Card from "@/components/Project/Card";
-import SharedLayout from "@/components/Shared/Layout/SharedLayout";
+import Carousel from "@/components/Project/Carousel";
+import useMeasure from "react-use-measure";
 
 export default function Project() {
-    const [offset, setOffset] = useState(0);
+    const [ref, { width }] = useMeasure();
     return (
-        <section id="Projects" className="flex min-h-screen flex-col items-center justify-between p-24">
+        <section id="Projects" ref={ref} className="flex min-h-screen flex-col items-center justify-between p-24">
             <div className=" overflow-hidden p-4">
                 {/* CARDS */}
                 <div className="mx-auto max-w-6xl">
                     <h1 className="mb-4 text-2xl font-semibold">
                         Recent <span className="text-slate-500">Projects.</span>
                     </h1>
-                    <motion.div
-                        animate={{
-                            x: offset,
-                        }}
-                        className="flex"
-                    >
-                        {projects.map((project) => {
-                            return <Card key={project.id} {...project} />;
-                        })}
-                    </motion.div>
+                    <Carousel items={projects} />
                 </div>
             </div>
         </section>

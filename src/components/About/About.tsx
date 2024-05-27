@@ -1,11 +1,8 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import {motion} from "framer-motion";
-import SharedLayout from "@/components/Shared/Layout/SharedLayout";
 import Image from "next/image";
 
-export const AboutMe: React.FC = () => {
-    const [name, setName] = useState<string>("");
-
+const AboutMe: React.FC = () => {
     return (
         <section id="AboutMe" className="relative overflow-hidden bg-blend-color-dodge p-8">
             <div className="grid grid-cols-6 md:grid-cols-12 items-center gap-4">
@@ -24,11 +21,13 @@ export const AboutMe: React.FC = () => {
                         transition={{ duration: 1.25, delay: 0.5, ease: "easeInOut" }}
                         className="mb-9 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg md:text-lg md:leading-relaxed"
                     >
-                        Hello, I'm Justin Yeh (Mandarin Name: 葉致廷 Yè Zhìtíng), a Master’s student in Computer Science at Vanderbilt University
-                        with a fervent interest in leveraging technology to solve complex problems, particularly within the realms of cybersecurity
-                        and data-driven applications.
-                        Check out some projects that I've done.
-                        Cheers! 🍻
+                        Hello, I am a research software engineer at
+                        <span className={"text-sky-500"}>
+                            <a href={"https://www.isis.vanderbilt.edu/projects/scalable-cyber-physical-simulation-automated-cyber-agent-training"} target={"_blank"} rel={"noreferrer"}>
+                                Institute for Software Integrated Systems, Vanderbilt University
+                            </a>
+                        </span>.
+                        With a fervent interest in leveraging technology to solve complex problems, particularly within the realms of cloud computing, cyber security, and artificial intelligence, I am passionate about De
                     </motion.p>
                 </div>
                 <div className="relative col-span-6 md:col-span-4 w-full h-64 md:h-auto">
@@ -41,8 +40,8 @@ export const AboutMe: React.FC = () => {
                         <Image
                             src="/images/test_images1.png"
                             alt="Profile Picture"
-                            width={400}
-                            height={400}
+                            width={300}
+                            height={300}
                             className="rounded-lg"
                         />
                     </motion.p>
@@ -51,3 +50,5 @@ export const AboutMe: React.FC = () => {
         </section>
     );
 }
+
+export default AboutMe;
