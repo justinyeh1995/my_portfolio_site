@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 function imageLoader({ src }: { src: string }) {
-    return `${src}`; // REPLACE WITH YOUR IMAGE DIRECTORY
+    return `/out/${src}`; // REPLACE WITH YOUR IMAGE DIRECTORY
 }
 
 const AboutMe = () => {
@@ -35,7 +35,7 @@ const AboutMe = () => {
                             className="w-full h-full transition-transform duration-300 ease-in-out"
                         >
                             <Image
-                                src="/out/images/test_images1.png"
+                                src="/images/test_images1.png"
                                 alt="Profile Picture"
                                 width={300}
                                 height={300}
