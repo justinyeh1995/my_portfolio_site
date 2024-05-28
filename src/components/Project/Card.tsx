@@ -16,7 +16,7 @@ const Card = ({ id, url, image_url, title, description }: CardType) => {
                 width: CARD_WIDTH,
                 height: CARD_HEIGHT,
                 marginRight: MARGIN,
-                backgroundImage: `url(${image_url})`,
+                backgroundImage: `url(/out/${image_url})`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
             }}
