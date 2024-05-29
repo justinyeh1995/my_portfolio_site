@@ -376,7 +376,7 @@ const MobileMenuLink = ({
                     className="overflow-hidden"
                 >
                     <div ref={ref}>
-                        <FoldContent />
+                        {/*<FoldContent />*/}
                     </div>
                 </motion.div>
             )}
