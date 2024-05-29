@@ -35,7 +35,7 @@ const AboutMe = () => {
                             className="w-full h-full transition-transform duration-300 ease-in-out"
                         >
                             <Image
-                                src="/out/images/test_images1.png"
+                                src="/images/profile.jpeg"
                                 alt="Profile Picture"
                                 width={300}
                                 height={300}
