@@ -5,7 +5,7 @@ import React from "react";
 export default function Project() {
     const [ref, { width }] = useMeasure();
     return (
-        <section id="Projects" ref={ref} className="flex min-h-screen flex-col bg-zinc-950 items-center justify-between p-24">
+        <section id="Projects" ref={ref} className="relative overflow-hidden bg-zinc-950 py-8 px-4 md:px-16 lg:px-24 min-h-screen flex flex-col justify-center">
             <div className=" overflow-hidden p-4">
                 {/* CARDS */}
                 <div className="mx-auto max-w-6xl">
