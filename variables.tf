@@ -7,11 +7,11 @@ variable "aws_region" {
 variable "www_domain" {
   description = "The domain name for the www bucket"
   type        = string
-  default     = "www.chih-ting.yeh.com"
+  default     = "www.chihtingyeh.com"
 }
 
-variable "redirect_domain" {
+variable "base_domain" {
   description = "The domain name for the redirect bucket"
   type        = string
-  default     = "chih-ting.yeh.com"
+  default     = "chihtingyeh.com"
 }
