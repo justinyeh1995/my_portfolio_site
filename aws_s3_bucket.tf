@@ -66,14 +66,14 @@ resource "aws_s3_bucket_policy" "site" {
 # create chihtingyeh.com bucket #
 #################################
 
-resource "aws_s3_bucket" "redirect_bucket" {
-  bucket = var.redirect_domain
+resource "aws_s3_bucket" "base_bucket" {
+  bucket = var.base_domain
 }
 
-resource "aws_s3_bucket_website_configuration" "redirect_bucket" {
-    bucket = aws_s3_bucket.redirect_bucket.bucket
+resource "aws_s3_bucket_website_configuration" "base_bucket" {
+    bucket = aws_s3_bucket.base_bucket.bucket
     redirect_all_requests_to {
-        host_name = "www.chihitingyeh.com"
+        host_name = var.www_domain
         protocol  = "https"
     }
 }
