@@ -71,7 +71,7 @@ resource "aws_s3_bucket" "base_bucket" {
 }
 
 resource "aws_s3_bucket_website_configuration" "base_bucket" {
-    bucket = aws_s3_bucket.base_bucket.bucket
+    bucket = aws_s3_bucket.base_bucket.id
     redirect_all_requests_to {
         host_name = var.www_domain
         protocol  = "https"
