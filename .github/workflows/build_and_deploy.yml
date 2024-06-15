@@ -7,9 +7,9 @@ on:
 env:
   REGION: ${{ secrets.AWS_REGION }}
   IAM_ROLE: ${{ secrets.AWS_ASSUME_ROLE_ARN }} # this is a IAM role in AWS account store as secret in github account
-  BUCKET: justinleafyeh.com
+  BUCKET: www.justinleafyeh.com
   DIST: out
-  DIST_ID: E2BDN1X97VJ7FR
+  DIST_ID: ${{ secrets.AWS_DISTRIBUTION_ID }}
   
 # permission can be added at job level or workflow level
 permissions:
