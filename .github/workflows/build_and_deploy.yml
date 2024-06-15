@@ -69,6 +69,9 @@ jobs:
       - name: Build
         run: npm run build_fix
 
+      - name: Show folders
+        run: ls -l
+
       - name: Deploy out/ folder to S3
         run: aws s3 sync ${{env.DIST}} s3://${{ env.BUCKET }} --delete
       
