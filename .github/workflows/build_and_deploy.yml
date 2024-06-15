@@ -71,11 +71,8 @@ jobs:
       - name: Build
         run: npm run build_fix
 
-      - name: Show folders
-        run: ls -l
-
       - name: Deploy out/ folder to S3
-        run: aws s3 sync ${{env.DIST}} s3://${{ env.BUCKET }} --delete
+        run: aws s3 sync ${{env.DIST}} s3://${{ env.BUCKET }}/out --delete
       
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{env.DIST_ID}} --paths "/*"
