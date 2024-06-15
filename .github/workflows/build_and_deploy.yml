@@ -19,6 +19,7 @@ permissions:
   contents: read    # This is required for actions/checkout
 
 jobs:
+  # Needs to add state locking or store the state in S3 bucket 
   # terraform-deploy:
   #   runs-on: ubuntu-latest
 
@@ -40,8 +41,8 @@ jobs:
   #       run: | 
   #         cd infra/setup-terraform
   #         terraform init
-  #         terraform plan -out plan.out -var="www_domain=${{ env.WWW_DOMAIN }}" -var="base_domain=${{ env.BASE_DOMAIN }}"
-  #         terraform apply -auto-approve plan.out
+  #         terraform plan -out plan.tfplan -var="www_domain=${{ env.WWW_DOMAIN }}" -var="base_domain=${{ env.BASE_DOMAIN }}"
+  #         terraform apply -auto-approve plan.tfplan
 
   build-and-deploy:
     # needs: 'terraform-deploy'
@@ -75,7 +76,9 @@ jobs:
         run: npm run build_fix
 
       - name: Deploy out/ folder to S3
-        run: aws s3 sync ${{env.DIST}} s3://${{ env.BUCKET }}/out --delete
+        run: |
+          aws s3 sync ${{env.DIST}} s3://${{ env.BUCKET }}/out --exclude `"*.js`" --delete 
+          aws s3 sync ${{env.DIST}} s3://${{ env.BUCKET }}/out --exclude `"*`" --include `"*.js`" --content-type application/javascript --delete
       
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{env.DIST_ID}} --paths "/*"
