@@ -17,31 +17,31 @@ permissions:
   contents: read    # This is required for actions/checkout
 
 jobs:
-  terraform-deploy:
-    runs-on: ubuntu-latest
+  # terraform-deploy:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
 
-      - name: Configure AWS Credentials with GitHub OIDC
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-region: ${{ env.REGION }}
-          role-to-assume: ${{ env.IAM_ROLE }}
-          role-session-name: my-github-actions-sessione
+  #     - name: Configure AWS Credentials with GitHub OIDC
+  #       uses: aws-actions/configure-aws-credentials@v4
+  #       with:
+  #         aws-region: ${{ env.REGION }}
+  #         role-to-assume: ${{ env.IAM_ROLE }}
+  #         role-session-name: my-github-actions-sessione
       
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v3
+  #     - name: Set up Terraform
+  #       uses: hashicorp/setup-terraform@v3
       
-      - name: Update Infra with Terraform
-        run: | 
-          terraform init
-          terraform plan
-          terraform apply -auto-approve
+  #     - name: Update Infra with Terraform
+  #       run: | 
+  #         terraform init
+  #         terraform plan
+  #         terraform apply -auto-approve
 
   build-and-deploy:
-    needs: 'terraform-deploy'
+    # needs: 'terraform-deploy'
     runs-on: ubuntu-latest
     strategy:
       matrix:
