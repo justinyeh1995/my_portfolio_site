@@ -1,0 +1,65 @@
+name: Deploy with Terraform and Deploy out/ to AWS S3 bucket
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  aws-config:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-2
+          role-to-assume: arn:aws:iam::767397993832:role/my-github-actions-role
+          role-session-name: my-github-actions-sessione
+
+  terraform-deploy:
+    needs: aws-config
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+      
+      - name: Initialize Terraform
+        run: terraform init
+      
+      - name: Plan Terraform
+        run: terraform plan
+      
+      - name: Apply Terraform
+        run: terraform apply -auto-approve
+
+  npm-install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build
+        run: npm run build_fix
+
+  s3-deploy:
+    needs: ['npm-install', 'terraform-deploy']
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Deploy out/ folder to S3
+        run: aws s3 sync out/ s3://justinleafyeh.com --delete
