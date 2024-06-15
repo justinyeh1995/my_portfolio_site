@@ -50,6 +50,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          clean: false
       
       - name: Configure AWS Credentials with GitHub OIDC
         uses: aws-actions/configure-aws-credentials@v4
