@@ -77,8 +77,8 @@ jobs:
 
       - name: Deploy out/ folder to S3
         run: |
-          aws s3 sync ${{env.DIST}} s3://${{ env.BUCKET }}/out --exclude `"*.js`" --delete 
-          aws s3 sync ${{env.DIST}} s3://${{ env.BUCKET }}/out --exclude `"*`" --include `"*.js`" --content-type application/javascript --delete
+          aws s3 sync ${{env.DIST}} s3://${{ env.BUCKET }}/out --exclude "*.js" --delete 
+          aws s3 sync ${{env.DIST}} s3://${{ env.BUCKET }}/out --exclude "*" --include "*.js" --content-type application/javascript --delete
       
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{env.DIST_ID}} --paths "/*"
