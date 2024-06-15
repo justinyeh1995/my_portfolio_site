@@ -448,6 +448,6 @@ const LINKS = [
     },
     {
         text: "Updates",
-        href: "#",
+        href: "#Updates",
     },
 ];
