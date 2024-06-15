@@ -8,6 +8,8 @@ env:
   REGION: ${{ secrets.AWS_REGION }}
   IAM_ROLE: ${{ secrets.AWS_ASSUME_ROLE_ARN }} # this is a IAM role in AWS account store as secret in github account
   BUCKET: www.justinleafyeh.com
+  WWW_DOMAIN: www.justinleafyeh.com
+  BASE_DOMAIN: justinleafyeh.com
   DIST: out
   DIST_ID: ${{ secrets.AWS_DISTRIBUTION_ID }}
   
@@ -17,28 +19,29 @@ permissions:
   contents: read    # This is required for actions/checkout
 
 jobs:
-  # terraform-deploy:
-  #   runs-on: ubuntu-latest
+  terraform-deploy:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-  #     - name: Configure AWS Credentials with GitHub OIDC
-  #       uses: aws-actions/configure-aws-credentials@v4
-  #       with:
-  #         aws-region: ${{ env.REGION }}
-  #         role-to-assume: ${{ env.IAM_ROLE }}
-  #         role-session-name: my-github-actions-sessione
+      - name: Configure AWS Credentials with GitHub OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ env.REGION }}
+          role-to-assume: ${{ env.IAM_ROLE }}
+          role-session-name: my-github-actions-session
       
-  #     - name: Set up Terraform
-  #       uses: hashicorp/setup-terraform@v3
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
       
-  #     - name: Update Infra with Terraform
-  #       run: | 
-  #         terraform init
-  #         terraform plan
-  #         terraform apply -auto-approve
+      - name: Update Infra with Terraform
+        run: | 
+          cd infra/setup-terraform
+          terraform init
+          terraform plan -out plan.out -var="www_domain=${{ env.WWW_DOMAIN }}" -var="base_domain=${{ env.BASE_DOMAIN }}"
+          terraform apply -auto-approve plan.out
 
   build-and-deploy:
     # needs: 'terraform-deploy'
