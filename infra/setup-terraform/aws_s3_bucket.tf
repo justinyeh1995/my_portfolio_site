@@ -10,10 +10,10 @@ resource "aws_s3_bucket" "www_bucket" {
 resource "aws_s3_object" "provision_source_files" {
     bucket = aws_s3_bucket.www_bucket.id
     # upload out folder to the bucket
-    for_each = fileset("${local.prefix}/", "**/*.*")
+    for_each = fileset("${local.dist_dir}/", "**/*.*")
 
     key    = "${local.prefix}/${each.key}"
-    source = "${local.prefix}/${each.value}"
+    source = "${local.dist_dir}/${each.value}"
 
     content_type = lookup(local.content_types, regex("\\.[^.]+$", each.value), null)
 }

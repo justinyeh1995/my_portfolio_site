@@ -1,5 +1,5 @@
 locals {
-  dist_dir    = "${path.module}/out"
+  dist_dir    = "${path.module}/../../out"
   module_name = basename(abspath(path.module))
   prefix      = "out"
   
