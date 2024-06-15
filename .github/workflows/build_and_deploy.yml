@@ -5,8 +5,8 @@ on:
   push:
     branches: [main]
 env:
-  REGION: us-east-2
-  IAM_ROLE: arn:aws:iam::767397993832:role/my-github-actions-role # this is a IAM role in AWS account
+  REGION: ${{ secrets.AWS_REGION }}
+  IAM_ROLE: ${{ secrets.AWS_ASSUME_ROLE_ARN }} # this is a IAM role in AWS account store as secret in github account
   BUCKET: justinleafyeh.com
   DIST: out
   DIST_ID: E2BDN1X97VJ7FR
@@ -56,7 +56,7 @@ jobs:
         with:
           aws-region: ${{ env.REGION }}
           role-to-assume: ${{ env.IAM_ROLE }}
-          role-session-name: my-github-actions-sessione
+          role-session-name: my-github-actions-session
 
       - name: Install Dependencies
         uses: actions/setup-node@v4
