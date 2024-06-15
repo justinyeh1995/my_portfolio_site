@@ -1,3 +1,4 @@
+# Configure OIDC provider first
 name: Deploy with Terraform and Deploy out/ to AWS S3 bucket
 
 on:
@@ -18,7 +19,7 @@ permissions:
 jobs:
   terraform-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
