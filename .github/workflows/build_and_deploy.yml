@@ -6,7 +6,7 @@ on:
     branches: [main]
 env:
   REGION: us-east-2
-  IAM_ROLE: arn:aws:iam::767397993832:role/my-github-actions-role
+  IAM_ROLE: arn:aws:iam::767397993832:role/my-github-actions-role # this is a IAM role in AWS account
   BUCKET: justinleafyeh.com
   DIST: out
   DIST_ID: E2BDN1X97VJ7FR
