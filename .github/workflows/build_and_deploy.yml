@@ -3,16 +3,22 @@ name: Deploy with Terraform and Deploy out/ to AWS S3 bucket
 on:
   push:
     branches: [main]
-  # pull_request:
-  #   branches: [main]
+env:
+  REGION: us-east-2
+  IAM_ROLE: arn:aws:iam::767397993832:role/my-github-actions-role
+  BUCKET: justinleafyeh.com
+  DIST: out
+  DIST_ID: E2BDN1X97VJ7FR
+  
+# permission can be added at job level or workflow level
+permissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: read    # This is required for actions/checkout
 
 jobs:
   terraform-deploy:
     runs-on: ubuntu-latest
-    env:
-      REGION: us-east-2
-      IAM_ROLE: arn:aws:iam::767397993832:role/my-github-actions-role
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -39,12 +45,6 @@ jobs:
     strategy:
       matrix:
         node-version: [20.x]
-    env:
-      REGION: us-east-2
-      IAM_ROLE: arn:aws:iam::767397993832:role/my-github-actions-role
-      BUCKET: justinleafyeh.com
-      DIST: out
-      DIST_ID: E2BDN1X97VJ7FR
 
     steps:
       - name: Checkout code
