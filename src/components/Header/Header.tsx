@@ -436,18 +436,23 @@ const LINKS = [
         href: "#AboutMe",
         component: AboutUsContent,
     },
+    // {
+    //     text: "Experiences",
+    //     href: "#Experiences",
+    //     component: CareersContent,
+    // },
     {
         text: "Projects",
         href: "#Projects",
         component: PricingContent,
     },
-    {
-        text: "Resume",
-        href: "#",
-        component: CareersContent,
-    },
-    {
-        text: "Updates",
-        href: "#Updates",
-    },
+    // {
+    //     text: "Skills",
+    //     href: "#Skills",
+    //     component: CareersContent,
+    // },
+    // {
+    //     text: "Updates",
+    //     href: "#Updates",
+    // },
 ];
