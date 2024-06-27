@@ -123,7 +123,21 @@ export const Content = () => {
             >
                 <SocialMedias />
             </motion.div>
-            <motion.div className="flex flex-col items-center gap-6 mt-6">
+            <motion.div 
+                initial={{
+                    y: 25,
+                    opacity: 0,
+                }}
+                animate={{
+                    y: 0,
+                    opacity: 1,
+                }}
+                transition={{
+                    duration: 1.25,
+                    delay: 0.25,
+                    ease: "easeInOut",
+                }}
+                className="flex flex-col items-center gap-6 mt-6">
                 <button onClick={() => window.open('./resumes/resume.pdf', '_blank')} 
                     className="bg-indigo-300 text-white text-base md:text-lg font-medium px-8 py-2 
                                 shadow-[3px_3px_0_black] hover:shadow-[1px_1px_0_black] hover:translate-x-[3px] hover:translate-y-[3px] transition-all">
