@@ -27,11 +27,11 @@ const SocialMedias = () => {
                     <FaGithub className="text-2xl text-zinc-50" />
                 </a>
             </li>
-            <li className="flex items-center">
+            {/* <li className="flex items-center">
                 <a href="mailto:justinyeh1995.com" target="_blank" className="text-zinc-50 hover:text-zinc-200">
                     <SiGmail className="text-2xl text-zinc-50" />
                 </a>
-            </li>
+            </li> */}
         </ul>
     );
 };
@@ -83,7 +83,7 @@ export const Content = () => {
                     duration: 1.25,
                     ease: "easeInOut",
                 }}
-                className="relative"
+                className="mb-6 flex justify-center"
             >
                 <GlowingChip count={count}>Exciting announcement 🎉: Visitors: </GlowingChip>
             </motion.div>
@@ -101,7 +101,7 @@ export const Content = () => {
                     delay: 0.1,
                     ease: "easeInOut",
                 }}
-                className="mb-3 text-center text-3xl font-bold leading-tight text-zinc-50 sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight lg:text-7xl lg:leading-tight"
+                className="mb-3 flex text-center items-center text-3xl font-bold leading-tight text-zinc-50 sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight lg:text-7xl lg:leading-tight"
             >
                 Chih-Ting Yeh 🚀
             </motion.h1>
