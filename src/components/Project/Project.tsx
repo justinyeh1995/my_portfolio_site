@@ -13,7 +13,7 @@ export default function Project() {
                         initial={{ y: 25, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 1.25, ease: "easeInOut" }}
-                        className="text-3xl sm:text-2xl font-bold text-gray-100 mb-6 text-center"
+                        className="text-4xl sm:text-2xl font-bold text-gray-100 mb-6 text-center"
                     >
                         Recent Projects
                     </motion.h2>
