@@ -10,13 +10,13 @@ const AboutMe = () => {
     return (
         <section id="AboutMe" className="relative overflow-hidden bg-zinc-950 pt-52 md:pt-52 md:pb-10 md:px-16 lg:px-24 flex flex-col justify-center">
             <motion.h2
-                className="text-3xl sm:text-2xl font-bold text-gray-100 mb-6 text-center md:text-left"
+                className="text-4xl sm:text-2xl font-bold text-gray-100 mb-6 text-center md:text-left"
             >
                 More About Me <span className="text-slate-500">🚀</span>
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 <motion.div 
-                    className="col-span-12 md:col-span-8 px-4"
+                    className="col-span-12 md:col-span-8 sm:px-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
