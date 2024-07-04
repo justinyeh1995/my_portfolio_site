@@ -7,7 +7,9 @@ import Header from "@/components/Header/Header";
 import Project from "@/components/Project/Project";
 import {Hero} from "@/components/Hero/Hero";
 import AboutMe from "@/components/About/About";
+import ExperienceTimeline from "@/components/Experience/ExperienceSection";
 import {Footer} from "@/components/Footer/Footer";
+
 
 export default function Home() {
   return (
@@ -15,6 +17,7 @@ export default function Home() {
         <Header />
         <Hero />
         <AboutMe />
+        <ExperienceTimeline />
         <Project />
         <Footer />
     </main>
