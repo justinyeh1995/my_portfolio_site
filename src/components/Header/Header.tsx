@@ -48,12 +48,11 @@ const FlyoutNav = () => {
 };
 
 const Logo = ({ color = "white" }: { color?: string }) => {
-    // Temp logo from https://logoipsum.com/
     return (
         <div className="flex items-center gap-2">
-      <span className="text-2xl font-bold" style={{ color }}>
-        Yeh 🍀
-      </span>
+            <span className="text-gray-500 text-2xl font-bold"> {'<'} </span>      
+            <span className="text-2xl font-bold" style={{ color }}>Yeh 🍀</span>
+            <span className="text-gray-500 text-2xl font-bold">  {'/>'} </span>   
             {/*<svg*/}
             {/*    width="50"*/}
             {/*    height="39"*/}
@@ -436,11 +435,11 @@ const LINKS = [
         href: "#AboutMe",
         component: AboutUsContent,
     },
-    // {
-    //     text: "Experiences",
-    //     href: "#Experiences",
-    //     component: CareersContent,
-    // },
+    {
+        text: "Experiences",
+        href: "#Experiences",
+        component: CareersContent,
+    },
     {
         text: "Projects",
         href: "#Projects",
