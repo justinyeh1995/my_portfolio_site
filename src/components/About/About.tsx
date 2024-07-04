@@ -8,12 +8,12 @@ function imageLoader({ src }: { src: string }) {
 
 const AboutMe = () => {
     return (
-        <section id="AboutMe" className="relative overflow-hidden bg-zinc-950 py-8 px-4 md:px-16 lg:px-24 min-h-screen flex flex-col justify-center">
-            <motion.h1
+        <section id="AboutMe" className="relative overflow-hidden bg-zinc-950 pt-52 md:pt-52 md:pb-10 md:px-16 lg:px-24 flex flex-col justify-center">
+            <motion.h2
                 className="text-4xl font-bold text-gray-100 mb-6 text-center md:text-left"
             >
-                About Me
-            </motion.h1>
+                More About Me <span className="text-slate-500">🚀</span>
+            </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
                 <div className="col-span-12 md:col-span-8 flex justify-center md:justify-start">
                     <motion.p className="mb-9 text-base leading-relaxed text-zinc-400 sm:text-lg md:text-lg md:leading-relaxed text-center md:text-left">
