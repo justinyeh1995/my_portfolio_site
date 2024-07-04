@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import {motion} from "framer-motion";
 import {FaGithub, FaLinkedin, FaMailBulk} from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import Image from 'next/image'
 
 
 const GlowingChip = ({ children, count }: { children: string, count: number}) => {
@@ -101,10 +102,28 @@ export const Content = () => {
                     delay: 0.1,
                     ease: "easeInOut",
                 }}
-                className="mb-3 flex text-center items-center text-3xl font-bold leading-tight text-zinc-50 sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight lg:text-7xl lg:leading-tight"
+                className="mb-6 flex text-center items-center text-2xl font-bold leading-tight text-zinc-50 sm:text-2xl sm:leading-tight md:text-3xl md:leading-tight lg:text-5xl lg:leading-tight"
             >
-                Chih-Ting Yeh 🚀
+                Hi all, I am Chih-Ting (Justin) 
             </motion.h1>
+            <motion.p 
+                initial={{
+                    y: 25,
+                    opacity: 0,
+                }}
+                animate={{
+                    y: 0,
+                    opacity: 1,
+                }}
+                transition={{
+                    duration: 0.25,
+                    delay: 0.1,
+                    ease: "easeInOut",
+                }}
+                className="mb-6 flex text-center items-center font-bold leading-tight text-gray-400 sm:leading-tight md:leading-tight lg:leading-tight"
+            >
+                A Passionate Software Developer. Used to do a lot of Street Dancing but my body can not keep up with it now. 😆
+            </motion.p>
             <motion.div
                 initial={{
                     y: 25,
