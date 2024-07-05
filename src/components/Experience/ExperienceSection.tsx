@@ -15,7 +15,7 @@ interface TimelineProps {
 
 const Timeline: React.FC<TimelineProps> = ({ items }) => {
   return (
-    <section id="Experiences" className='pt-24 md:pt-52 pb-10 bg-gradient-to-b from-zinc-800/0 to-zinc-700'>
+    <section id="Experiences" className='pt-24 md:pt-52 pb-10 bg-zinc-950'>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
           className="text-4xl sm:text-2xl font-bold mb-8 text-center text-gray-100"
