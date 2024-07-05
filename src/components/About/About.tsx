@@ -8,7 +8,7 @@ function imageLoader({ src }: { src: string }) {
 
 const AboutMe = () => {
     return (
-        <section id="AboutMe" className="relative overflow-hidden bg-zinc-900 pt-52 md:pt-52 md:pb-10 md:px-16 lg:px-24 flex flex-col justify-center">
+        <section id="AboutMe" className="relative overflow-hidden bg-gradient-to-b from-zinc-900/0 to-zinc-800 pt-52 md:pt-52 md:pb-10 md:px-16 lg:px-24 flex flex-col justify-center">
             <motion.h2
                 className="text-4xl sm:text-2xl font-bold text-gray-100 mb-6 text-center md:text-left"
             >

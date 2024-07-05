@@ -5,7 +5,7 @@ import React from "react";
 export default function Project() {
     const [ref, { width }] = useMeasure();
     return (
-        <section id="Projects" ref={ref} className="relative overflow-hidden bg-zinc-900 pt-52 md:pt-52 md:pb-10 md:px-16 lg:px-24 flex flex-col justify-center">
+        <section id="Projects" ref={ref} className="relative overflow-hidden bg-gradient-to-b from-zinc-700/0 to-zinc-600 pt-52 md:pt-52 md:pb-10 md:px-16 lg:px-24 flex flex-col justify-center">
             <div className=" overflow-hidden p-4">
                 {/* CARDS */}
                 <div className="mx-auto max-w-6xl">
