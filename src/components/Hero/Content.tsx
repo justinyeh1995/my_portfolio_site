@@ -102,7 +102,7 @@ export const Content = () => {
                     delay: 0.1,
                     ease: "easeInOut",
                 }}
-                className="mb-6 flex text-center items-center text-2xl font-bold leading-tight text-zinc-50 sm:text-2xl sm:leading-tight md:text-3xl md:leading-tight lg:text-5xl lg:leading-tight"
+                className="mb-6 flex text-center items-center text-3xl font-bold leading-tight text-zinc-50 sm:text-3xl sm:leading-tight md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight"
             >
                 Hi all, I am Chih-Ting (Justin) 
             </motion.h1>
@@ -122,7 +122,7 @@ export const Content = () => {
                 }}
                 className="mb-6 flex text-center items-center font-bold leading-tight text-gray-400 sm:leading-tight md:leading-tight lg:leading-tight"
             >
-                A Passionate Software Developer. Used to do a lot of Street Dancing but my body can not keep up with it now. 😆
+                A Passionate Software Developer who used to do a lot of Street Dancing but my body can not keep up with it anymore. 😆
             </motion.p>
             <motion.div
                 initial={{

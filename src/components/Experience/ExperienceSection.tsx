@@ -15,10 +15,10 @@ interface TimelineProps {
 
 const Timeline: React.FC<TimelineProps> = ({ items }) => {
   return (
-    <section id="Experiences" className='pt-24 md:pt-52 pb-10 bg-zinc-950'>
+    <section id="Experiences" className='pt-16 md:pt-52 pb-10 bg-zinc-950'>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
-          className="text-4xl sm:text-2xl font-bold mb-8 text-center text-gray-100"
+          className="text-4xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-center text-gray-100"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

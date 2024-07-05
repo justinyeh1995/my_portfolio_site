@@ -5,7 +5,7 @@ import React from "react";
 export default function Project() {
     const [ref, { width }] = useMeasure();
     return (
-        <section id="Projects" ref={ref} className="relative overflow-hidden bg-zinc-950 pt-52 md:pt-52 md:pb-10 md:px-16 lg:px-24 flex flex-col justify-center">
+        <section id="Projects" ref={ref} className="relative overflow-hidden bg-zinc-950 pt-16 md:pt-52 md:pb-10 md:px-16 lg:px-24 flex flex-col justify-center">
             <div className=" overflow-hidden p-4">
                 {/* CARDS */}
                 <div className="mx-auto max-w-6xl">
@@ -13,7 +13,7 @@ export default function Project() {
                         initial={{ y: 25, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 1.25, ease: "easeInOut" }}
-                        className="text-4xl sm:text-2xl font-bold text-gray-100 mb-6 text-center"
+                        className="text-4xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-100 mb-6 text-center"
                     >
                         Recent Projects
                     </motion.h2>
