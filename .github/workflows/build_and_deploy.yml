@@ -20,29 +20,29 @@ permissions:
 
 jobs:
   # Needs to add state locking or store the state in S3 bucket 
-  # terraform-deploy:
-  #   runs-on: ubuntu-latest
+  terraform-deploy:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-  #     - name: Configure AWS Credentials with GitHub OIDC
-  #       uses: aws-actions/configure-aws-credentials@v4
-  #       with:
-  #         aws-region: ${{ env.REGION }}
-  #         role-to-assume: ${{ env.IAM_ROLE }}
-  #         role-session-name: my-github-actions-session
+      - name: Configure AWS Credentials with GitHub OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ env.REGION }}
+          role-to-assume: ${{ env.IAM_ROLE }}
+          role-session-name: my-github-actions-session
       
-  #     - name: Set up Terraform
-  #       uses: hashicorp/setup-terraform@v3
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
       
-  #     - name: Update Infra with Terraform
-  #       run: | 
-  #         cd infra/setup-terraform
-  #         terraform init
-  #         terraform plan -out plan.tfplan -var="www_domain=${{ env.WWW_DOMAIN }}" -var="base_domain=${{ env.BASE_DOMAIN }}"
-  #         terraform apply -auto-approve plan.tfplan
+      - name: Update Infra with Terraform
+        run: | 
+          cd infra/setup-terraform
+          terraform init
+          terraform plan -out plan.tfplan -var="www_domain=${{ env.WWW_DOMAIN }}" -var="base_domain=${{ env.BASE_DOMAIN }}"
+          terraform apply -auto-approve plan.tfplan
 
   build-and-deploy:
     # needs: 'terraform-deploy'
