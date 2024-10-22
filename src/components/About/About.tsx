@@ -50,8 +50,8 @@ const AboutMe = () => {
                     <p className="text-sm sm:text-base leading-relaxed text-zinc-400 text-justify sm:text-left">
                     Passionate about building data-driven applications, I am looking for opportunities in the industry to apply my skills and knowledge. In my free time, I work on side projects to further my skills. Cheers! 🍻
                     </p> */}
-                    My journey has been marked by a passion for cybersecurity and cloud computing. Our team developed an end-to-end solution at the Institute for Software Integrated Systems, which significantly enhanced the CybORG platform's capabilities by integrating it with Mininet. This innovation allows for realistic network environment simulations without the resource intensity of a network cluster.
-                    My technical proficiency is grounded in my experience at Academia Sinica, where we conceptualized advanced recommendation systems for E-Sun Bank. Leveraging my skills in FastAPI, Django REST Framework, and SwiftUI, I'm committed to delivering robust software services that address complex challenges and drive technological progress.
+                    My journey has been marked by a passion for cybersecurity and cloud computing. Our team developed an end-to-end solution at the Institute for Software Integrated Systems, which significantly enhanced the CybORG platform&apos;s capabilities by integrating it with Mininet. This innovation allows for realistic network environment simulations without the resource intensity of a network cluster.
+                    My technical proficiency is grounded in my experience at Academia Sinica, where we conceptualized advanced recommendation systems for E-Sun Bank. Leveraging my skills in FastAPI, Django REST Framework, and SwiftUI, I&apos;m committed to delivering robust software services that address complex challenges and drive technological progress.
                     Cheers, 🥂
                 </motion.div>
                   </CardDescription>
