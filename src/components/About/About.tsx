@@ -18,7 +18,7 @@ function imageLoader({ src }: { src: string }) {
 const AboutMe = () => {
     return (
         <section id="AboutMe" className="relative overflow-hidden bg-zinc-950 pt-16 md:pt-52 md:pb-10 md:px-16 lg:px-24 flex flex-col justify-center">
-            <Card >
+            {/* <Card >
                 <CardHeader>
                   <motion.h2
                     className="text-4xl 
@@ -35,7 +35,7 @@ const AboutMe = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >   
-                    {/* <p className="mb-4 text-sm sm:text-base leading-relaxed text-zinc-400 text-justify sm:text-left">
+                    <p className="mb-4 text-sm sm:text-base leading-relaxed text-zinc-400 text-justify sm:text-left">
                     Hello, I am a research software engineer intern at <span className="text-slate-500"><a href="https://www.isis.vanderbilt.edu/projects/scalable-cyber-physical-simulation-automated-cyber-agent-training" target="_blank" rel="noopener noreferrer">Institute for Software Integrated Systems, Vanderbilt University</a></span>. I recently graduated with a Master of Science in Computer Science degree from Vanderbilt University.
                     </p>
                     <p className="mb-4 text-sm sm:text-base leading-relaxed text-zinc-400 text-justify sm:text-left">
@@ -49,7 +49,7 @@ const AboutMe = () => {
                     </p>
                     <p className="text-sm sm:text-base leading-relaxed text-zinc-400 text-justify sm:text-left">
                     Passionate about building data-driven applications, I am looking for opportunities in the industry to apply my skills and knowledge. In my free time, I work on side projects to further my skills. Cheers! 🍻
-                    </p> */}
+                    </p>
                     My journey has been marked by a passion for cybersecurity and cloud computing. Our team developed an end-to-end solution at the Institute for Software Integrated Systems, which significantly enhanced the CybORG platform&apos;s capabilities by integrating it with Mininet. This innovation allows for realistic network environment simulations without the resource intensity of a network cluster.
                     My technical proficiency is grounded in my experience at Academia Sinica, where we conceptualized advanced recommendation systems for E-Sun Bank. Leveraging my skills in FastAPI, Django REST Framework, and SwiftUI, I&apos;m committed to delivering robust software services that address complex challenges and drive technological progress.
                     Cheers, 🥂
@@ -75,9 +75,9 @@ const AboutMe = () => {
                         />
                     </motion.div>
                 </div>
-             </div>
+             </div> */}
             
-            {/* <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 <motion.div 
                     className="col-span-12 md:col-span-8 px-4"
                     initial={{ opacity: 0, y: 20 }}
@@ -99,9 +99,9 @@ const AboutMe = () => {
                     <p className="text-sm sm:text-base leading-relaxed text-zinc-400 text-justify sm:text-left">
                     Passionate about building data-driven applications, I am looking for opportunities in the industry to apply my skills and knowledge. In my free time, I work on side projects to further my skills. Cheers! 🍻
                     </p>
-                    My journey has been marked by a passion for cybersecurity and cloud computing. Our team developed an end-to-end solution at the Institute for Software Integrated Systems, which significantly enhanced the CybORG platform's capabilities by integrating it with Mininet. This innovation allows for realistic network environment simulations without the resource intensity of a network cluster.
+                    {/* My journey has been marked by a passion for cybersecurity and cloud computing. Our team developed an end-to-end solution at the Institute for Software Integrated Systems, which significantly enhanced the CybORG platform's capabilities by integrating it with Mininet. This innovation allows for realistic network environment simulations without the resource intensity of a network cluster.
                     My technical proficiency is grounded in my experience at Academia Sinica, where we conceptualized advanced recommendation systems for E-Sun Bank. Leveraging my skills in FastAPI, Django REST Framework, and SwiftUI, I'm committed to delivering robust software services that address complex challenges and drive technological progress.
-                    Cheers, 🥂
+                    Cheers, 🥂 */}
                 </motion.div>
                 <div className="col-span-12 md:col-span-4 flex justify-center md:justify-end">
                     <div className="relative w-64 h-64 md:w-full md:h-full overflow-hidden rounded-lg shadow-lg">
@@ -123,7 +123,7 @@ const AboutMe = () => {
                         </motion.div>
                     </div>
                 </div>
-            </div> */}
+            </div>
         </section>
     );
 };
