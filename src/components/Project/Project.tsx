@@ -37,7 +37,7 @@ const projects = [
         title: "CybORG-Mininet",
         image_url: "/images/cyborg-mininet.png",
         description: "A Cyber Operations Research Gym extension with Mininet.",
-        url: "https://github.com/CASTLEGym/CybORG/tree/mininet-cyborg2/CybORG/Mininet",
+        url: "https://github.com/justinyeh1995/CybORG-Mininet",
     },
     {
         id: 3,
